@@ -35,7 +35,7 @@ function ChatInterface() {
   }, []);
 
   useEffect(() => {
-    const pollInterval = setInterval(getMessageById, 100); 
+    const pollInterval = setInterval(getMessageById, 1000); 
     return () => {
       clearInterval(pollInterval);
     };
@@ -85,7 +85,7 @@ function ChatInterface() {
   const fetchMessages = async () => {
     setTimeout(()=>{
     updateFlagFalse();
-    });
+    },5000);
     try {
       const response = await axios.get(Url);
       const fetchedMessages = response.data.map((message) => {

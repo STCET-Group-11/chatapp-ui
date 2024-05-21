@@ -35,14 +35,13 @@ function ChatInterface() {
   }, []);
 
   useEffect(() => {
-    const pollInterval = setInterval(getMessageById, 100); 
+    const pollInterval = setInterval(getMessageById, 1); 
     return () => {
       clearInterval(pollInterval);
     };
   }, []);
 
   const updateFlagFalse = async () => {
-    setTimeout(()=>{
     axios.put(getUrl, updatedDataFalse)
     .then((response) => {
       console.log('Message updated False:', response.data);
@@ -52,7 +51,6 @@ function ChatInterface() {
       console.error('Error updating message:', error);
       // Handle the error
     });
-  },5000);
   };
 
   const updateFlagTrue = async () => {
@@ -84,7 +82,6 @@ function ChatInterface() {
   };
 
   const fetchMessages = async () => {
-    updateFlagFalse();
     try {
       const response = await axios.get(Url);
       const fetchedMessages = response.data.map((message) => {
@@ -114,6 +111,9 @@ function ChatInterface() {
     } catch (error) {
       console.error('Error fetching messages:', error);
     }
+    setTimeout(()=>{
+    }, 5000);
+    updateFlagFalse();
   };
   
 

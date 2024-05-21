@@ -42,6 +42,7 @@ function ChatInterface() {
   }, []);
 
   const updateFlagFalse = async () => {
+
     axios.put(getUrl, updatedDataFalse)
     .then((response) => {
       console.log('Message updated False:', response.data);
@@ -82,9 +83,9 @@ function ChatInterface() {
   };
 
   const fetchMessages = async () => {
-    setTimeout(() => {
-      updateFlagFalse();
-    }, 5000);
+    setTimeout(()=>{
+    updateFlagFalse();
+    });
     try {
       const response = await axios.get(Url);
       const fetchedMessages = response.data.map((message) => {

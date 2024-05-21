@@ -14,7 +14,7 @@ const AuthUser = ({ onAuthentication }) => {
   const handleSendOTP = async () => {
     setSendingOTP(true); // Set sendingOTP to true when sending OTP
     try {
-      await axios.post('http://localhost:3001/send-otp', { email });
+      await axios.post('https://chatapp-backend-fhne.onrender.com/send-otp', { email });
       setOtpSent(true);
       setMessage('OTP sent. Please enter OTP to verify.');
     } catch (error) {
@@ -27,7 +27,7 @@ const AuthUser = ({ onAuthentication }) => {
 
   const handleVerifyOTP = async () => {
     try {
-      const response = await axios.post('http://localhost:3001/verify-otp', { email, otp });
+      const response = await axios.post('https://chatapp-backend-fhne.onrender.com/verify-otp', { email, otp });
       if (response.data.success) {
         onAuthentication(true);
       } else {

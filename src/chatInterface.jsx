@@ -83,9 +83,7 @@ function ChatInterface() {
   };
 
   const fetchMessages = async () => {
-    setTimeout(()=>{
-    updateFlagFalse();
-    },5000);
+
     try {
       const response = await axios.get(Url);
       const fetchedMessages = response.data.map((message) => {
@@ -115,6 +113,9 @@ function ChatInterface() {
     } catch (error) {
       console.error('Error fetching messages:', error);
     }
+    setTimeout(()=>{
+      updateFlagFalse();
+      },5000);
   };
   
 

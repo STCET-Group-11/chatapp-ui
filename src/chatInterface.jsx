@@ -111,9 +111,9 @@ function ChatInterface() {
     } catch (error) {
       console.error('Error fetching messages:', error);
     }
-    setTimeout(()=>{
+    setTimeout(() => {
+      updateFlagFalse();
     }, 5000);
-    updateFlagFalse();
   };
   
 

@@ -22,8 +22,8 @@ const secretKey = 'qwerty';
 const messageId = '64f240fb921a7b9b2ba8d197'; // Replace with the actual ID
 
 // Define the URL with the query parameter
-const getUrl = `http://localhost:3001/queries/${messageId}`;
-const Url= 'http://localhost:3001/messages';
+const getUrl = `https://chatapp-backend-fhne.onrender.com/${messageId}`;
+const Url= 'https://chatapp-backend-fhne.onrender.com/messages';
 
 function ChatInterface() {
   const [messages, setMessages] = useState([]);

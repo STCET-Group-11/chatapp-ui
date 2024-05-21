@@ -54,6 +54,7 @@ function ChatInterface() {
   };
 
   const updateFlagTrue = async () => {
+    setTimeout(()=>{
     axios.put(getUrl, updatedDataTrue)
     .then((response) => {
       console.log('Message updated True:', response.data);
@@ -63,6 +64,7 @@ function ChatInterface() {
       console.error('Error updating message:', error);
       // Handle the error
     });
+  },5000);
   };
 
 

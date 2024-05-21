@@ -35,7 +35,7 @@ function ChatInterface() {
   }, []);
 
   useEffect(() => {
-    const pollInterval = setInterval(getMessageById, 1); 
+    const pollInterval = setInterval(getMessageById, 100); 
     return () => {
       clearInterval(pollInterval);
     };
